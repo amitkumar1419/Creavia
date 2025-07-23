@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CREAVIA - Profile</title>
+  <link rel="stylesheet" href="profile.css">
+</head>
+<body>
+  <label class="switch">
+    <input type="checkbox" id="theme-toggle">
+    <span class="slider"></span>
+  </label>
+  <div class="profile-container">
+     <h1>Your Profile</h1>
+
+    <!-- Profile Picture Section -->
+    <div class="profile-pic-container">
+      <img id="profile-picture" src="assets/image2.jpg" alt="Profile Picture">
+      <label for="upload-profile-picture" class="edit-icon">
+        <img src="assets/pencil-ion.png" alt="Edit">
+      </label>
+      <input type="file" id="upload-profile-picture" accept="image/*" hidden>
+    </div>
+
+    <!-- Username Editing -->
+    <div class="edit-username-section">
+      <input type="text" id="user-name" placeholder="Enter your name" />
+      <button id="save-username">Save</button>
+    </div>
+
+    <!-- Display Username and Email -->
+    <div class="user-info">
+      <h2 id="user-name-display">Welcome!</h2>
+      <p id="user-email"></p>
+    </div>
+
+    <!-- Weather Notification Toggle -->
+    <div class="notification-settings">
+      <h3>Notification Settings</h3>
+      <label>
+        <input type="checkbox" id="weather-notification">
+        <inline>Enable Weather Alerts</inline>
+      </label>
+    </div>
+
+    <!-- Weather Info Section -->
+    <div id="weather-info">
+      <h3>Current Weather:</h3>
+      <p id="weather-message">Loading weather...</p>
+      <p id="song-suggestion"></p>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <div class="navigation-buttons">
+      <button onclick="window.location.href='friend-mode.html'" class="friend-mode-btn">
+        Go to Friend Mode
+      </button>
+      <button onclick="window.location.href='safe-mode.html'" class="safe-mode-btn">
+        Go to Safe Mode
+      </button>
+    </div>
+
+    <!-- Logout Button -->
+    <button id="logout-btn" class="logout-btn">Logout</button>
+  </div>
+
+  <script src="profile.js"></script>
+</body>
+</html>

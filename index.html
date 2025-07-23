@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CREAVIA - Login</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <label class="switch">
+    <input type="checkbox" id="theme-toggle">
+    <span class="slider"></span>
+  </label>
+
+  <!-- Cloud Background (newly added) -->
+  <div class="clouds">
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+  </div>
+<div class="moon" id="moon"></div>
+
+  <!-- Login Container -->
+  <div class="login-container">
+    <h1>Welcome to Creavia</h1>
+
+    <!-- Google Login Button -->
+    <button id="google-login" class="login-btn">Login with Google</button>
+
+    <!-- Phone Number Login Form -->
+    <div id="phone-login-section">
+      <h2>Login with Phone Number</h2>
+      <input type="text" id="phone-number" class="login-input" placeholder="Enter your phone number (+91...)" />
+      <div id="recaptcha-container"></div>
+      <button id="send-otp" class="login-btn">Send OTP</button>
+
+      <input type="text" id="otp" class="login-input" placeholder="Enter OTP" style="display: none;" />
+      <button id="verify-otp" class="login-btn" style="display: none;">Verify OTP</button>
+    </div>
+
+    <!-- Optional Logout Button -->
+    <!--
+    <button id="logout" class="login-btn" style="display: none;">Logout</button>
+    -->
+
+    <!-- Optional Profile Info -->
+    <!--
+    <div id="profile-section" style="display: none;">
+      <h2>Welcome, <span id="user-name"></span>!</h2>
+      <p>Email: <span id="user-email"></span></p>
+      <img id="user-photo" src="assets/image2.jpg" alt="Profile Picture" width="100" />
+    </div>
+    -->
+  </div>
+
+  <!-- JavaScript File -->
+  <script type="module" src="script.js"></script>
+</body>
+</html>

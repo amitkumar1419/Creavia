@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CREAVIA - Friend Mode</title>
+  <link rel="stylesheet" href="friend-mode.css" />
+  <script type="module" src="friend-mode.js" defer></script>
+</head>
+<body>
+  <label class="switch">
+    <input type="checkbox" id="theme-toggle">
+    <span class="slider"></span>
+  </label>
+  <div class="clouds">
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+  </div>
+  <div class="container">
+    <h2>Friend Mode</h2>
+
+    <input type="text" id="your-number" placeholder="Enter your number (+91...)" />
+    <div id="recaptcha-container"></div>
+    <button id="verify-btn">Verify Your Number</button>
+
+    <div id="otp-section" style="display: none;">
+      <input type="text" id="otp" placeholder="Enter OTP" />
+      <button id="verify-otp">Verify OTP</button>
+    </div>
+    <div id="friend-section">
+      <input type="text" id="friend-number" placeholder="Enter friend's number" disabled />
+      <button id="Confirm-friend-number"> Confirm number </button>
+      <div id="friend-name-section" style="display: none;">
+        <input type="text" id="friend-name" placeholder="Enter friend's Name" disabled />
+      </div>
+      <div id="friend-location-section" style="display: none;">
+        <input type="location" id="friend-location" placeholder="Enter friend's location" disabled />
+      </div>
+    </div>
+
+    <select id="relation" disabled>
+      <option value="Best Friend">Best Friend</option>
+      <option value="Sibling">Sibling</option>
+      <option value="Crush">Crush</option>
+      <option value="Partner">Partner</option>
+      <option value="MOTHER">MOTHER</option>
+      <option value="FATHER">FATHER</option>
+      <option value="FRIEND">FRIEND</option>
+      <option value="BRO">BRO</option>
+      <option value="SIS">SIS</option>
+      <option value="OTHER">OTHER</option>
+    </select>
+
+    <label>
+      <input type="checkbox" id="advanced-mode" disabled />
+      Enable Advanced Mode (Set custom message for each weather)
+    </label>
+
+    <div id="advanced-fields" style="display: none; margin-top: 10px;">
+      <h4>Custom Weather Messages:</h4>
+
+      <label>Sunny Weather:</label>
+      <input type="text" id="sunny-msg" placeholder="Enter message for sunny weather" />
+      <input type="text" id="sunny-song" placeholder="Enter song link for sunny weather" />
+
+      <label>Cloudy Weather:</label>
+      <input type="text" id="cloudy-msg" placeholder="Enter message for cloudy weather" />
+      <input type="text" id="cloudy-song" placeholder="Enter song link for cloudy weather" />
+
+      <label>Rainy Weather:</label>
+      <input type="text" id="rainy-msg" placeholder="Enter message for rainy weather" />
+      <input type="text" id="rainy-song" placeholder="Enter song link for rainy weather" />
+
+      <label>Cold Weather:</label>
+      <input type="text" id="cold-msg" placeholder="Enter message for cold weather" />
+      <input type="text" id="cold-song" placeholder="Enter song link for cold weather" />
+    </div>
+
+    <label><input type="checkbox" id="disable-send" disabled /> Disable sending messages to this friend</label>
+    <label><input type="checkbox" id="friend-safe" disabled /> Friend Safe Mode (Block incoming messages from this
+      friend)</label>
+
+    <button id="send-msg-btn" disabled>Send Weather Notification</button>
+    <button onclick="window.location.href='profile.html'">Back to Profile</button>
+  </div>
+  <script>
+    if ('Notification' in window) {
+      Notification.requestPermission().then(permission => {
+        console.log("Notification permission:", permission);
+      });
+    }
+    if (Notification.permission !== "granted") {
+      Notification.requestPermission().then(permission => {
+        if (permission === "granted") {
+          console.log("Notification permission granted.");
+        } else {
+          console.log("Notification permission denied.");
+        }
+      });
+    }
+  </script>
+</body>
+
+</html>

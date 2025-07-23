@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CREAVIA-Safe Mode</title>
+  <link rel="stylesheet" href="safe-mode.css">
+</head>
+
+<body>
+  <label class="switch">
+    <input type="checkbox" id="theme-toggle">
+    <span class="slider"></span>
+  </label>
+  <div class="safe-mode">
+    <h2>Safe Mode</h2>
+
+    <div class="section">
+      <h3>Block a Specific Number</h3>
+      <input type="text" id="block-number" placeholder="Enter number (e.g. +911234567890)" />
+      <button onclick="blockNumber()">Block</button>
+    </div>
+
+    <div class="section">
+      <h3>Unblock a Number</h3>
+      <input type="text" id="unblock-number" placeholder="Enter number to unblock" />
+      <button onclick="unblockNumber()">Unblock</button>
+    </div>
+
+    <div class="section">
+      <h3>Block Messages from All Users</h3>
+      <button class="danger" onclick="blockAll()">Block All</button>
+      <button onclick="unblockAll()">Unblock All</button>
+    </div>
+
+    <br /><br />
+    <button onclick="goBack()">Back</button>
+  </div>
+
+  <script src="safe-mode.js"></script>
+</body>
+
+</html>

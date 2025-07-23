@@ -1,0 +1,315 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  background: linear-gradient(to right, #4e54c8, #8f94fb);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  animation: backgroundAnimation 15s infinite alternate;
+  overflow: hidden;
+  transition: background 0.5s ease, color 0.5s ease;
+}
+
+@keyframes backgroundAnimation {
+  0% {
+    background: linear-gradient(to right, #4e54c8, #8f94fb);
+  }
+  50% {
+    background: linear-gradient(to right, #a1c4fd, #c2e9fb);
+  }
+  100% {
+    background: linear-gradient(to right, #4e54c8, #8f94fb);
+  }
+}
+
+/* Dark Mode Override */
+body.dark-mode {
+  background: linear-gradient(to right, #0f0f0f, #1a1a1a) !important;
+  animation: darkBackgroundAnimation 15s infinite alternate !important;
+  color: #fff;
+}
+
+@keyframes darkBackgroundAnimation {
+  0% {
+    background: linear-gradient(to right, #0f0f0f, #1a1a1a);
+  }
+  50% {
+    background: linear-gradient(to right, #1a1a1a, #333);
+  }
+  100% {
+    background: linear-gradient(to right, #0f0f0f, #1a1a1a);
+  }
+}
+
+/* Clouds */
+.clouds {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.cloud {
+  position: absolute;
+  background-image: url('clouds.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 300px;
+  height: 150px;
+  opacity: 0.3;
+  animation: cloudAnimation 40s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Position and animate multiple clouds */
+.cloud:nth-child(1) {
+  top: 10%;
+  left: -350px;
+  animation-duration: 60s;
+}
+
+.cloud:nth-child(2) {
+  top: 25%;
+  left: -400px;
+  animation-duration: 50s;
+}
+
+.cloud:nth-child(3) {
+  top: 40%;
+  left: -450px;
+  animation-duration: 70s;
+}
+.cloud:nth-child(4){
+  top: 60%;
+  left: -550px;
+  animation-duration: 40s;
+}
+
+
+@keyframes cloudAnimation {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(120vw);
+  }
+}
+
+
+/* Switch */
+.switch {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Light & Dark Mode Specifics */
+body.light-mode {
+  background-color: #f0f0f0;
+  color: #000;
+}
+
+.login-container {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
+body.dark-mode .login-container {
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0px 4px 10px white;
+}
+
+/* Login Container */
+.login-container {
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 450px;
+  text-align: center;
+  z-index: 1;
+  font-size: 16px;
+}
+
+/* Header Styles */
+h1 {
+  color: #333;
+  font-size: 28px;
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+h2 {
+  color: #666;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+body.dark-mode h1,
+body.dark-mode h2 {
+  color: #fff;
+}
+
+/* Buttons */
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  margin: 12px 0;
+  border: none;
+  background-color: #0056b3;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.login-btn:hover {
+  background-color: #003d7a;
+  transform: translateY(-2px);
+}
+
+.login-btn:active {
+  transform: translateY(2px);
+}
+
+/* Input Fields */
+.login-input {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.login-input:focus {
+  border-color: #0056b3;
+  outline: none;
+}
+
+/* Phone Number Login Section */
+#phone-login-section {
+  margin-top: 20px;
+}
+
+input[type="text"] {
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 25px;
+  }
+
+  .login-btn {
+    padding: 12px;
+  }
+
+  .login-input {
+    padding: 10px;
+  }
+}
+/* Moon (visible only in dark mode) */
+.moon {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+body.dark-mode .moon {
+  opacity: 1;
+}
+
+.moon {
+  position: absolute;
+  top: 60px;
+  right: 60px;
+  width: 80px;
+  height: 80px;
+  background: radial-gradient(circle, #ffffff 40%, #e0e0e0 70%, transparent 80%);
+  border-radius: 50%;
+  box-shadow: 0 0 30px 10px rgba(255, 255, 255, 0.3),
+              0 0 60px 20px rgba(255, 255, 255, 0.2),
+              0 0 100px 30px rgba(255, 255, 255, 0.1);
+  z-index: -2;
+  display: none;
+  animation: pulse 4s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 30px 10px rgba(255, 255, 255, 0.3),
+                0 0 60px 20px rgba(255, 255, 255, 0.2),
+                0 0 100px 30px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 40px 20px rgba(255, 255, 255, 0.5),
+                0 0 70px 30px rgba(255, 255, 255, 0.3),
+                0 0 120px 40px rgba(255, 255, 255, 0.2);
+  }
+  100% {
+    box-shadow: 0 0 30px 10px rgba(255, 255, 255, 0.3),
+                0 0 60px 20px rgba(255, 255, 255, 0.2),
+                0 0 100px 30px rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Show moon in dark mode */
+body.dark-mode .moon {
+  display: block;
+}
